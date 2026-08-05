@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Guest attendance form for International English Academy India club sessions.">
+  <title>Guest Attendance | IEA Clubs</title>
+  <link rel="icon" href="assets/images/iea-logo.png">
+  <link rel="stylesheet" href="assets/css/variables.css?v=guest-attendance-1">
+  <link rel="stylesheet" href="assets/css/global.css?v=guest-attendance-1">
+  <link rel="stylesheet" href="assets/css/public.css?v=guest-attendance-1">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=guest-attendance-1">
+  <link rel="stylesheet" href="assets/css/guest-attendance.css?v=guest-attendance-1">
+</head>
+<body class="public-page guest-attendance-body" data-page="guest-attendance">
+  <a class="skip-link" href="#guestAttendanceMain">Skip to guest attendance</a>
+  <header id="siteHeader"></header>
+
+  <main id="guestAttendanceMain" class="guest-attendance-main">
+    <section class="guest-attendance-shell" aria-labelledby="guestAttendanceTitle">
+      <div class="guest-attendance-brand">
+        <img src="assets/images/iea-logo.png" alt="International English Academy India">
+      </div>
+
+      <div class="guest-attendance-heading">
+        <p class="eyebrow">IEA Clubs</p>
+        <h1 id="guestAttendanceTitle">Guest Attendance</h1>
+        <p>Select the club whose attendance is open, then fill in your details. Guest attendance can be submitted only during the session’s active attendance window.</p>
+      </div>
+
+      <div id="guestAttendanceMessage" class="guest-attendance-message" aria-live="polite"></div>
+
+      <section aria-labelledby="guestClubsTitle">
+        <div class="guest-section-head">
+          <div>
+            <p class="eyebrow">Today’s availability</p>
+            <h2 id="guestClubsTitle">Choose a club</h2>
+          </div>
+          <button id="guestAttendanceRefresh" class="button button-secondary" type="button">Refresh</button>
+        </div>
+
+        <div id="guestAttendanceClubGrid" class="guest-club-grid" aria-live="polite">
+          <article class="guest-club-card">
+            <span class="guest-club-icon" aria-hidden="true">🎬</span>
+            <h3>Film Club</h3>
+            <p>Checking today’s attendance…</p>
+            <button class="button button-block" type="button" disabled>Checking…</button>
+          </article>
+          <article class="guest-club-card">
+            <span class="guest-club-icon" aria-hidden="true">📚</span>
+            <h3>Reading Club</h3>
+            <p>Checking today’s attendance…</p>
+            <button class="button button-block" type="button" disabled>Checking…</button>
+          </article>
+          <article class="guest-club-card">
+            <span class="guest-club-icon" aria-hidden="true">🌍</span>
+            <h3>Awareness Club</h3>
+            <p>Checking today’s attendance…</p>
+            <button class="button button-block" type="button" disabled>Checking…</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="guestAttendanceFormSection" class="guest-form-section" aria-labelledby="guestFormTitle" hidden>
+        <div class="guest-section-head">
+          <div>
+            <p class="eyebrow">Your details</p>
+            <h2 id="guestFormTitle">Complete Guest Attendance</h2>
+          </div>
+        </div>
+
+        <div id="guestSelectedSession" class="guest-selected-session"></div>
+
+        <form id="guestAttendanceForm" novalidate>
+          <input id="guestSessionId" name="sessionId" type="hidden">
+
+          <div class="guest-form-grid">
+            <label class="form-field">
+              <span class="form-label">Full Name *</span>
+              <input class="form-input" name="name" type="text" maxlength="120" autocomplete="name" required>
+            </label>
+
+            <label class="form-field">
+              <span class="form-label">Phone Number *</span>
+              <input class="form-input" name="phone" type="tel" inputmode="numeric" maxlength="18" autocomplete="tel" required>
+            </label>
+
+            <label class="form-field">
+              <span class="form-label">WhatsApp Number</span>
+              <input class="form-input" name="whatsapp" type="tel" inputmode="numeric" maxlength="18" autocomplete="tel">
+            </label>
+
+            <label class="form-field">
+              <span class="form-label">Email</span>
+              <input class="form-input" name="email" type="email" maxlength="200" autocomplete="email">
+            </label>
+
+            <label class="form-field">
+              <span class="form-label">City *</span>
+              <input class="form-input" name="city" type="text" maxlength="100" autocomplete="address-level2" required>
+            </label>
+
+            <label class="form-field">
+              <span class="form-label">Age</span>
+              <input class="form-input" name="age" type="number" min="8" max="100" inputmode="numeric">
+            </label>
+
+            <label class="form-field full">
+              <span class="form-label">Occupation / School / College / Institution</span>
+              <input class="form-input" name="occupation" type="text" maxlength="180">
+            </label>
+
+            <label class="form-field full">
+              <span class="form-label">How did you hear about IEA?</span>
+              <select class="form-input" name="heardFrom">
+                <option value="">Select an option</option>
+                <option value="Friend or Member">Friend or Member</option>
+                <option value="Instagram">Instagram</option>
+                <option value="Facebook">Facebook</option>
+                <option value="WhatsApp">WhatsApp</option>
+                <option value="Google or Website">Google or Website</option>
+                <option value="Academy Visit">Academy Visit</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+
+            <label class="guest-honeypot" aria-hidden="true">
+              Website
+              <input name="website" type="text" tabindex="-1" autocomplete="off">
+            </label>
+          </div>
+
+          <div id="guestFormMessage" class="form-message" aria-live="polite"></div>
+
+          <div class="guest-form-actions">
+            <button id="guestAttendanceCancel" class="button button-secondary" type="button">Choose Another Club</button>
+            <button id="guestAttendanceSubmit" class="button button-primary" type="submit">Mark Guest Attendance</button>
+          </div>
+        </form>
+      </section>
+
+      <p class="guest-attendance-note">Guest attendance does not use member credits. The submitted information is stored securely in the IEA Google Sheets database for attendance and follow-up.</p>
+    </section>
+  </main>
+
+  <footer id="siteFooter"></footer>
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <script src="assets/js/config.js?v=guest-attendance-1"></script>
+  <script src="assets/js/utils.js?v=guest-attendance-1"></script>
+  <script src="assets/js/api.js?v=guest-attendance-1"></script>
+  <script src="assets/js/auth.js?v=guest-attendance-1"></script>
+  <script src="assets/js/navigation.js?v=guest-attendance-1"></script>
+  <script src="assets/js/guest-attendance.js?v=guest-attendance-1"></script>
+</body>
+</html>

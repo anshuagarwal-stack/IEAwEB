@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Membership | IEA Clubs</title>
+  <link rel="icon" href="assets/images/iea-logo.png">
+  <link rel="stylesheet" href="assets/css/variables.css?v=recovery-20260729">
+  <link rel="stylesheet" href="assets/css/global.css?v=guest-attendance-1">
+  <link rel="stylesheet" href="assets/css/dashboard.css?v=recovery-20260729">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=recovery-20260729">
+</head>
+<body class="dashboard-body" data-page="member-membership">
+  <a class="skip-link" href="#membershipContent">Skip to membership</a>
+
+  <div class="dashboard-shell">
+    <aside id="dashboardSidebar" aria-label="Member navigation"></aside>
+
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <button
+          id="dashboardMenuButton"
+          class="dashboard-menu-button"
+          type="button"
+          aria-label="Open member menu"
+          aria-expanded="false"
+        >☰</button>
+
+        <div>
+          <h1>Member Dashboard</h1>
+          <p>Membership and credit details</p>
+        </div>
+
+        <button
+          id="topbarLogout"
+          class="button button-secondary topbar-logout"
+          type="button"
+        >Logout</button>
+      </header>
+
+      <main id="membershipContent" class="dashboard-content">
+        <div id="membershipLoading" class="loading-state">
+          <p>Loading your membership…</p>
+        </div>
+
+        <div id="membershipError"></div>
+
+        <div id="membershipPageContent" class="hidden">
+          <div class="dashboard-heading">
+            <p class="eyebrow">Membership</p>
+            <h2>Your Plan and Credits</h2>
+            <p>Review validity, credit usage and the membership plans currently available.</p>
+          </div>
+
+          <div id="membershipWarnings" class="info-stack" aria-live="polite"></div>
+
+          <section class="dark-card membership-hero-card" aria-labelledby="membershipPlanName">
+            <div>
+              <p class="eyebrow">Current membership</p>
+              <h2 id="membershipPlanName">—</h2>
+              <p id="membershipPlanDates">—</p>
+              <div id="membershipStatusBadge"></div>
+
+              <div class="credit-meter">
+                <div class="credit-meter-track" aria-hidden="true">
+                  <div id="creditMeterFill" class="credit-meter-fill"></div>
+                </div>
+                <p id="creditMeterText" class="small muted">—</p>
+              </div>
+            </div>
+
+            <a
+              id="renewalContactButton"
+              class="button"
+              href="#availablePlansHeading"
+            >Choose a Plan to Renew</a>
+          </section>
+
+          <section class="membership-detail-grid" aria-label="Membership details">
+            <dl class="dark-card membership-detail">
+              <dt>Start date</dt>
+              <dd id="detailStart">—</dd>
+            </dl>
+            <dl class="dark-card membership-detail">
+              <dt>Expiry date</dt>
+              <dd id="detailExpiry">—</dd>
+            </dl>
+            <dl class="dark-card membership-detail">
+              <dt>Days remaining</dt>
+              <dd id="detailDays">—</dd>
+            </dl>
+            <dl class="dark-card membership-detail">
+              <dt>Credits purchased</dt>
+              <dd id="detailPurchased">—</dd>
+            </dl>
+            <dl class="dark-card membership-detail">
+              <dt>Credits used</dt>
+              <dd id="detailUsed">—</dd>
+            </dl>
+            <dl class="dark-card membership-detail">
+              <dt>Credits remaining</dt>
+              <dd id="detailRemaining">—</dd>
+            </dl>
+            <dl class="dark-card membership-detail">
+              <dt>Membership status</dt>
+              <dd id="detailStatus">—</dd>
+            </dl>
+          </section>
+
+          <section class="dark-card dashboard-section" aria-labelledby="availablePlansHeading">
+            <div class="dashboard-section-head">
+              <div>
+                <h3 id="availablePlansHeading">Available Membership Plans</h3>
+                <p class="muted small">
+                  Select a plan, scan the UPI QR code and send the payment screenshot through WhatsApp.
+                </p>
+              </div>
+            </div>
+            <div id="availablePlanGrid" class="available-plan-grid"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <script src="assets/js/config.js?v=recovery-20260729"></script>
+  <script src="assets/js/utils.js?v=recovery-20260729"></script>
+  <script src="assets/js/api.js?v=recovery-20260729"></script>
+  <script src="assets/js/auth.js?v=ultra-fast-1"></script>
+  <script src="assets/js/navigation.js?v=guest-attendance-1"></script>
+  <script src="assets/js/member-data.js?v=ultra-fast-1"></script>
+  <script src="assets/js/payment.js?v=recovery-20260729"></script>
+  <script src="assets/js/membership.js?v=ultra-fast-1"></script>
+</body>
+</html>

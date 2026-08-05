@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Member and administrator login for IEA Clubs.">
+  <title>Login | IEA Clubs</title>
+  <link rel="icon" href="assets/images/iea-logo.png">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css?v=guest-attendance-1">
+  <link rel="stylesheet" href="assets/css/login.css?v=admin-1">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=admin-1">
+</head>
+<body class="login-body" data-page="login">
+  <header id="siteHeader"></header>
+  <main class="login-page">
+    <section class="dark-card login-card login-card-wide" aria-labelledby="loginHeading">
+      <img class="login-logo" src="assets/images/iea-logo.png" alt="International English Academy India">
+      <p class="eyebrow">Secure access</p>
+      <h1 id="loginHeading">IEA Clubs Login</h1>
+      <div class="login-mode-tabs" role="tablist" aria-label="Choose login type">
+        <button id="memberTab" class="login-mode-tab active" type="button" role="tab" aria-selected="true">Member Login</button>
+        <button id="adminTab" class="login-mode-tab" type="button" role="tab" aria-selected="false">Admin Login</button>
+      </div>
+
+      <section id="memberLoginPanel" role="tabpanel">
+        <p>Enter the unique three-digit PIN provided by IEA.</p>
+        <form id="memberLoginForm" novalidate>
+          <div class="form-field"><label class="form-label" for="pinInput">PIN</label><div class="pin-wrap"><input class="form-input" id="pinInput" name="pin" type="password" inputmode="numeric" pattern="[0-9]{3}" maxlength="3" autocomplete="one-time-code" required><button class="pin-toggle" id="pinToggle" type="button" aria-pressed="false">Show</button></div><span class="small muted">Exactly three numbers.</span></div>
+          <p id="loginMessage" class="form-message" aria-live="polite"></p>
+          <div class="login-actions"><button id="loginButton" class="button button-block" type="submit">Login</button><button id="rememberLoginButton" class="button button-secondary button-block" type="button">Login &amp; Remember This Device</button></div>
+        </form>
+      </section>
+
+      <section id="adminLoginPanel" role="tabpanel" hidden>
+        <p>Administrator access for managing members, attendance, clubs, plans, sessions and enquiries.</p>
+        <form id="adminLoginForm" novalidate>
+          <div class="form-field"><label class="form-label" for="adminEmail">Admin email</label><input class="form-input" id="adminEmail" type="email" autocomplete="username" required></div>
+          <div class="form-field"><label class="form-label" for="adminPassword">Password</label><input class="form-input" id="adminPassword" type="password" autocomplete="current-password" required></div>
+          <label class="remember-checkbox"><input id="adminRemember" type="checkbox"> Remember this admin login on this private device</label>
+          <p id="adminLoginMessage" class="form-message" aria-live="polite"></p>
+          <button id="adminLoginButton" class="button button-block" type="submit">Open Admin Panel</button>
+        </form>
+      </section>
+
+      <a class="back-home" href="index.html">← Return to Home</a>
+    </section>
+  </main>
+  <footer id="siteFooter"></footer>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/auth.js?v=ultra-fast-1"></script>
+  <script src="assets/js/admin-auth.js?v=1"></script>
+  <script src="assets/js/navigation.js?v=guest-attendance-1"></script>
+  <script src="assets/js/public-data.js"></script>
+  <script src="assets/js/login.js?v=admin-1"></script>
+  <script src="assets/js/admin-login.js?v=1"></script>
+</body>
+</html>

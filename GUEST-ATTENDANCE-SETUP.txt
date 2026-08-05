@@ -1,0 +1,43 @@
+IEA GUEST ATTENDANCE - INSTALLATION
+
+This package preserves the existing admin panel, member attendance, Quick Attendance,
+negative credit limit (-3), and three-row club-session spacing.
+
+NEW FRONTEND FILES
+- guest-attendance.html
+- assets/css/guest-attendance.css
+- assets/js/guest-attendance.js
+
+UPDATED FRONTEND FILES
+- assets/js/navigation.js
+- assets/css/global.css
+- assets/js/admin.js
+- HTML pages were cache-busted so the new menu appears immediately.
+
+NEW APPS SCRIPT FILE
+- GuestAttendance.gs
+
+UPDATED APPS SCRIPT FILES
+- Code.gs
+- Config.gs
+- AdminPanel.gs
+- Attendance.gs (keeps the -3 rule)
+- ClubSheetsAndEnquirySetup.gs (keeps three-row session spacing)
+
+INSTALLATION
+1. In Google Apps Script, replace Code.gs, Config.gs, AdminPanel.gs,
+   Attendance.gs and ClubSheetsAndEnquirySetup.gs.
+2. Add a new script file named GuestAttendance.gs and paste its contents.
+3. Save, select setupGuestAttendanceSystem, and click Run once.
+4. Deploy > Manage deployments > Edit > New version > Deploy.
+5. Copy the frontend files to the existing GitHub repository and push once.
+6. Do not upload apps-script-backend or database-backup to public GitHub.
+
+RESULT
+- Mobile three-bar menu shows Quick Attendance and Guest Attendance.
+- Guest page displays Film, Reading and Awareness Clubs.
+- Only an open club attendance window is selectable.
+- Guests enter their name, phone, WhatsApp, email, city, age, institution and source.
+- Records are stored in the new GuestAttendance sheet.
+- Duplicate attendance for the same session/contact number is blocked.
+- GuestAttendance appears inside the admin panel and can be edited or deleted by admin.

@@ -1,0 +1,29 @@
+IEA MEMBER DATA DISPLAY FIX
+===========================
+
+The uploaded project contained an internal JavaScript mismatch:
+- dashboard.js called IEA_AUTH.getCachedMember(), getCachedDashboard(), and cacheDashboard().
+- auth.js did not define any of those functions.
+
+That stopped dashboard.js before the API data could be rendered.
+
+FIXED FILES
+-----------
+1. assets/js/auth.js
+2. assets/js/navigation.js
+3. All HTML files have updated cache-version query strings for auth.js/navigation.js.
+
+No Google Apps Script replacement is required for this specific frontend bug.
+
+UPLOAD
+------
+Replace the contents of the current GitHub repository with the contents of this Github-Fixed folder.
+Keep the repository itself; do not delete it.
+
+Then commit and push once.
+
+After deployment:
+1. Open https://internationalenglishacademy.org/login.html
+2. Log out if an old session is present.
+3. Hard refresh once (Ctrl+Shift+R).
+4. Log in again.

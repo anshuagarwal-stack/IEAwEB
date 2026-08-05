@@ -1,0 +1,148 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 650px;
+  display: grid;
+  align-items: center;
+  background: var(--black);
+  color: var(--white);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.10), transparent 28%),
+    linear-gradient(135deg, transparent 0 48%, rgba(255, 255, 255, 0.035) 48% 49%, transparent 49% 100%);
+  pointer-events: none;
+}
+.hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 70px; align-items: center; }
+.hero-copy p { color: var(--grey-400); }
+.hero-mark { border: 1px solid var(--grey-800); border-radius: 30px; background: var(--charcoal); padding: 34px; }
+.hero-mark img { width: 100%; max-height: 300px; object-fit: contain; }
+.hero-kicker { color: var(--grey-400); font-weight: 750; letter-spacing: 0.13em; text-transform: uppercase; font-size: 0.8rem; }
+
+.club-card { padding: 28px; display: flex; flex-direction: column; min-height: 290px; }
+.club-card .club-number { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: var(--black); color: var(--white); font-weight: 800; margin-bottom: 30px; }
+.club-card .button { margin-top: auto; align-self: flex-start; }
+
+.session-list { display: grid; gap: 14px; }
+.session-card { display: grid; grid-template-columns: 1fr auto; gap: 18px; padding: 20px; align-items: center; }
+.session-meta { display: flex; flex-wrap: wrap; gap: 8px 16px; color: var(--grey-500); font-size: 0.9rem; }
+.session-title { margin-bottom: 8px; }
+.section-dark .session-card { background: var(--charcoal-2); border-color: var(--grey-700); }
+
+.feature-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.feature-item { padding: 20px; border: 1px solid var(--grey-300); border-radius: var(--radius-md); background: var(--white); font-weight: 700; }
+
+.cta-band { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 34px; border: 1px solid var(--grey-700); border-radius: var(--radius-lg); background: var(--charcoal-2); }
+.cta-band h2 { margin-bottom: 8px; }
+.cta-band p { margin-bottom: 0; }
+
+.page-hero { padding: 100px 0 72px; background: var(--black); color: var(--white); border-bottom: 1px solid var(--grey-800); }
+.page-hero p { color: var(--grey-400); }
+
+.club-detail { display: grid; grid-template-columns: 1fr 0.85fr; gap: 42px; align-items: start; }
+.club-detail + .club-detail { margin-top: 74px; padding-top: 74px; border-top: 1px solid var(--grey-300); }
+.club-detail-list { display: grid; gap: 12px; padding: 0; margin: 24px 0; list-style: none; }
+.club-detail-list li { padding-left: 22px; position: relative; }
+.club-detail-list li::before { content: "—"; position: absolute; left: 0; color: var(--grey-500); }
+.club-session-panel { padding: 24px; background: var(--charcoal); color: var(--white); border: 1px solid var(--grey-800); border-radius: var(--radius-md); position: sticky; top: 96px; }
+.club-session-panel p { color: var(--grey-400); }
+
+.plan-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.plan-card { padding: 28px; display: flex; flex-direction: column; min-height: 360px; }
+.plan-card.featured { background: var(--black); color: var(--white); border-color: var(--black); transform: translateY(-8px); }
+.plan-card.featured p { color: var(--grey-400); }
+.plan-price { font-size: 2.55rem; font-weight: 850; letter-spacing: -0.04em; margin: 16px 0 4px; }
+.plan-facts { list-style: none; padding: 0; margin: 24px 0; display: grid; gap: 12px; }
+.plan-facts li { padding-bottom: 12px; border-bottom: 1px solid var(--grey-300); }
+.plan-card.featured .plan-facts li { border-color: var(--grey-800); }
+.plan-card .button { margin-top: auto; }
+
+.about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 70px; align-items: start; }
+.about-statement { position: sticky; top: 110px; }
+.about-block + .about-block { margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--grey-300); }
+
+@media (max-width: 900px) {
+  .hero { min-height: auto; padding: 90px 0; }
+  .hero-grid, .club-detail, .about-grid { grid-template-columns: 1fr; }
+  .hero-mark { max-width: 520px; }
+  .feature-list, .plan-grid { grid-template-columns: 1fr; }
+  .plan-card.featured { transform: none; }
+  .club-session-panel, .about-statement { position: static; }
+  .cta-band { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .session-card { grid-template-columns: 1fr; }
+  .session-card .status-badge { justify-self: start; }
+  .page-hero { padding: 74px 0 54px; }
+}
+
+/* IEA membership enquiry form */
+.enquiry-card {
+  width: min(820px, 100%);
+  margin: 0 auto;
+  padding: 34px;
+}
+
+.enquiry-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.enquiry-card .form-label {
+  color: var(--charcoal);
+}
+
+.enquiry-card .form-input {
+  border-color: var(--grey-300);
+  background: var(--grey-100);
+  color: var(--charcoal);
+}
+
+.enquiry-card .form-input::placeholder {
+  color: var(--grey-500);
+}
+
+.enquiry-card textarea.form-input {
+  min-height: 135px;
+  resize: vertical;
+}
+
+.enquiry-submit-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.enquiry-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@media (max-width: 680px) {
+  .enquiry-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiry-card {
+    padding: 22px;
+  }
+
+  .enquiry-submit-row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .enquiry-submit-row .button {
+    width: 100%;
+  }
+}

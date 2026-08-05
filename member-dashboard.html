@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Member Dashboard | IEA Clubs</title>
+  <link rel="icon" href="assets/images/iea-logo.png">
+  <link rel="stylesheet" href="assets/css/variables.css?v=fast-login-20260729">
+  <link rel="stylesheet" href="assets/css/global.css?v=guest-attendance-1">
+  <link rel="stylesheet" href="assets/css/dashboard.css?v=fast-login-20260729">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=fast-login-20260729">
+</head>
+<body class="dashboard-body" data-page="member-dashboard">
+  <a class="skip-link" href="#dashboardContent">Skip to dashboard</a>
+  <div class="dashboard-shell">
+    <aside id="dashboardSidebar" aria-label="Member navigation"></aside>
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <button id="dashboardMenuButton" class="dashboard-menu-button" type="button" aria-label="Open member menu" aria-expanded="false">☰</button>
+        <div>
+          <h1>Member Dashboard</h1>
+          <p>IEA Clubs Membership and Attendance System</p>
+        </div>
+        <button id="topbarLogout" class="button button-secondary topbar-logout" type="button">Logout</button>
+      </header>
+      <main id="dashboardContent" class="dashboard-content">
+        <div id="dashboardLoading" class="loading-state"><p>Loading your dashboard…</p></div>
+        <div id="dashboardError"></div>
+        <div id="dashboardContentInner" class="hidden">
+          <div class="dashboard-heading">
+            <p class="eyebrow">Member overview</p>
+            <h2>Your IEA Clubs Dashboard</h2>
+            <p>Your membership, credits, attendance and upcoming sessions in one place.</p>
+          </div>
+
+          <div id="dashboardWarnings" class="info-stack" aria-live="polite"></div>
+
+          <section class="dark-card profile-strip" aria-labelledby="memberName">
+            <div id="memberAvatar" class="initials-avatar" aria-hidden="true">IEA</div>
+            <div>
+              <h3 id="memberName">Member</h3>
+              <div id="memberMeta" class="profile-meta"></div>
+              <div id="memberStatus" class="profile-status"></div>
+            </div>
+          </section>
+
+          <section class="summary-grid" aria-label="Member summary">
+            <article class="dark-card summary-card"><div class="summary-label">Remaining Credits</div><div id="remainingCredits" class="summary-value">—</div><div class="summary-note">Available across IEA Clubs</div></article>
+            <article class="dark-card summary-card"><div class="summary-label">Sessions Attended</div><div id="sessionsAttended" class="summary-value">—</div><div class="summary-note">Across IEA Clubs</div></article>
+            <article class="dark-card summary-card"><div class="summary-label">Plan Validity</div><div id="planValidity" class="summary-value">—</div><div id="planValidityNote" class="summary-note"></div></article>
+            <article class="dark-card summary-card"><div class="summary-label">Next Club Session</div><div id="nextSessionTitle" class="summary-value">—</div><div id="nextSessionDate" class="summary-note"></div></article>
+          </section>
+
+          <section class="dashboard-grid">
+            <article class="dark-card dashboard-panel"><h3>Membership</h3><div id="membershipSummary" class="info-stack"></div></article>
+            <article class="dark-card dashboard-panel"><h3>Attendance Snapshot</h3><div id="attendanceSnapshot" class="info-stack"></div></article>
+            <article class="dark-card dashboard-panel"><h3>Quick Actions</h3><div class="quick-actions"><a class="button" href="member-attendance.html">Mark My Attendance</a><a class="button button-secondary" href="member-membership.html">Renew Membership</a></div></article>
+          </section>
+
+          <section class="dark-card dashboard-section" aria-labelledby="upcomingMemberHeading">
+            <div class="dashboard-section-head"><h3 id="upcomingMemberHeading">Upcoming Sessions</h3><a class="button button-secondary" href="member-attendance.html">Attendance</a></div>
+            <div id="dashboardUpcomingSessions" class="dashboard-session-list"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+  <script src="assets/js/config.js?v=fast-login-20260729"></script>
+  <script src="assets/js/utils.js?v=fast-login-20260729"></script>
+  <script src="assets/js/api.js?v=fast-login-20260729"></script>
+  <script src="assets/js/auth.js?v=ultra-fast-1"></script>
+  <script src="assets/js/navigation.js?v=guest-attendance-1"></script>
+  <script src="assets/js/member-data.js?v=ultra-fast-1"></script>
+  <script src="assets/js/dashboard.js?v=ultra-fast-1"></script>
+</body>
+</html>

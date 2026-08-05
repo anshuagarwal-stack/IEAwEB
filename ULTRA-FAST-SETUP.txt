@@ -1,0 +1,42 @@
+IEA ULTRA-FAST MEMBER PAGES
+===========================
+
+What changed
+------------
+1. One Apps Script request now returns the Overview, Attendance and Membership data together.
+2. The browser stores that bundle securely against the member's session token.
+3. Clicking Overview, Attendance or Membership shows saved data immediately.
+4. Data refreshes in the background after 90 seconds.
+5. Google Sheets are read only once per API request instead of repeatedly.
+6. Attendance no longer starts two separate server requests.
+7. Existing admin panel, quick attendance, payments and enquiries are preserved.
+
+Apps Script files to replace
+----------------------------
+Code.gs
+Sheets.gs
+Auth.gs
+MemberApi.gs
+Attendance.gs
+PublicApi.gs
+
+After replacement: Deploy > Manage deployments > Edit > New version > Deploy.
+Keep the same /exec URL.
+
+GitHub files to replace/add
+---------------------------
+login.html
+member-dashboard.html
+member-attendance.html
+member-membership.html
+assets/js/auth.js
+assets/js/member-data.js (NEW)
+assets/js/dashboard.js
+assets/js/attendance.js
+assets/js/membership.js
+
+Push the changes through GitHub Desktop.
+
+Important
+---------
+The first Google Apps Script request after a long period of inactivity can still take a few seconds because of Apps Script cold start. After the bundle is loaded once, movement between the three member pages is immediate from browser storage.

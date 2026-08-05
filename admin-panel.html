@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Admin Panel | IEA Clubs</title>
+  <link rel="icon" href="assets/images/iea-logo.png">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/admin.css?v=1">
+</head>
+<body class="admin-body">
+  <div id="adminApp" class="admin-shell" hidden>
+    <aside class="admin-sidebar">
+      <a class="admin-brand" href="index.html"><img src="assets/images/iea-logo.png" alt="IEA"><span>IEA Admin</span></a>
+      <nav id="adminNav" class="admin-nav" aria-label="Admin sections"></nav>
+      <button id="adminLogout" class="button button-secondary button-block" type="button">Log out</button>
+    </aside>
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div><p class="eyebrow">Management console</p><h1 id="adminTitle">Dashboard</h1></div>
+        <div class="admin-user"><span id="adminName"></span><button id="mobileAdminMenu" class="button button-secondary" type="button">Menu</button></div>
+      </header>
+      <section id="adminStatus" class="admin-status" aria-live="polite"></section>
+      <section id="adminDashboard" class="admin-dashboard"></section>
+      <section id="sheetWorkspace" class="sheet-workspace" hidden>
+        <div class="workspace-toolbar">
+          <div><h2 id="sheetTitle">Data</h2><p id="sheetDescription" class="muted"></p></div>
+          <div class="workspace-actions">
+            <input id="sheetSearch" class="form-input" type="search" placeholder="Search this section">
+            <button id="refreshSheet" class="button button-secondary" type="button">Refresh</button>
+            <button id="addRow" class="button" type="button">Add record</button>
+          </div>
+        </div>
+        <div class="table-wrap"><table class="admin-table"><thead id="sheetHead"></thead><tbody id="sheetBody"></tbody></table></div>
+        <div class="pagination"><button id="prevPage" class="button button-secondary" type="button">Previous</button><span id="pageInfo"></span><button id="nextPage" class="button button-secondary" type="button">Next</button></div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="recordDialog" class="admin-dialog">
+    <form id="recordForm" method="dialog">
+      <div class="dialog-head"><div><p class="eyebrow">Database editor</p><h2 id="recordDialogTitle">Edit record</h2></div><button class="icon-button" value="cancel" aria-label="Close">×</button></div>
+      <div id="recordFields" class="record-fields"></div>
+      <p id="recordMessage" class="form-message" aria-live="polite"></p>
+      <div class="dialog-actions"><button class="button button-secondary" value="cancel" type="button" id="cancelRecord">Cancel</button><button class="button" type="submit">Save changes</button></div>
+    </form>
+  </dialog>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/admin-auth.js?v=1"></script>
+  <script src="assets/js/admin.js?v=guest-attendance-1"></script>
+</body>
+</html>

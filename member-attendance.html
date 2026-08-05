@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Attendance | IEA Clubs</title>
+  <link rel="icon" href="assets/images/iea-logo.png">
+  <link rel="stylesheet" href="assets/css/variables.css?v=recovery-20260729">
+  <link rel="stylesheet" href="assets/css/global.css?v=guest-attendance-1">
+  <link rel="stylesheet" href="assets/css/dashboard.css?v=recovery-20260729">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=recovery-20260729">
+</head>
+<body class="dashboard-body" data-page="member-attendance">
+  <a class="skip-link" href="#attendanceContent">Skip to attendance</a>
+  <div class="dashboard-shell">
+    <aside id="dashboardSidebar" aria-label="Member navigation"></aside>
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <button id="dashboardMenuButton" class="dashboard-menu-button" type="button" aria-label="Open member menu" aria-expanded="false">☰</button>
+        <div><h1>Member Dashboard</h1><p>Attendance and attendance history</p></div>
+        <button id="topbarLogout" class="button button-secondary topbar-logout" type="button">Logout</button>
+      </header>
+      <main id="attendanceContent" class="dashboard-content">
+        <div class="dashboard-heading">
+          <p class="eyebrow">Member attendance</p>
+          <h2>Mark Your Attendance</h2>
+          <p>All three club buttons remain visible. The backend decides which button is eligible using India time, the session schedule, membership validity and credit balance.</p>
+        </div>
+        <div id="attendanceSuccess" aria-live="polite"></div>
+        <section aria-labelledby="attendanceActionsHeading">
+          <h3 id="attendanceActionsHeading" class="sr-only">Attendance actions</h3>
+          <div id="attendanceActionGrid" class="attendance-action-grid"><div class="loading-state"><p>Checking attendance availability…</p></div></div>
+        </section>
+
+        <section class="dark-card dashboard-section" aria-labelledby="attendanceStatisticsHeading">
+          <div class="dashboard-section-head"><h3 id="attendanceStatisticsHeading">Attendance Statistics</h3></div>
+          <div class="summary-grid">
+            <article class="dark-card summary-card"><div class="summary-label">Total Attendance</div><div id="statTotal" class="summary-value">—</div></article>
+            <article class="dark-card summary-card"><div class="summary-label">Film Club</div><div id="statFilm" class="summary-value">—</div></article>
+            <article class="dark-card summary-card"><div class="summary-label">Reading Club</div><div id="statReading" class="summary-value">—</div></article>
+            <article class="dark-card summary-card"><div class="summary-label">Awareness Club</div><div id="statAwareness" class="summary-value">—</div></article>
+          </div>
+          <div class="membership-detail-grid">
+            <dl class="dark-card membership-detail"><dt>Most attended club</dt><dd id="statMost">—</dd></dl>
+            <dl class="dark-card membership-detail"><dt>First attendance date</dt><dd id="statFirst">—</dd></dl>
+            <dl class="dark-card membership-detail"><dt>Most recent attendance date</dt><dd id="statRecent">—</dd></dl>
+          </div>
+        </section>
+
+        <section class="dark-card dashboard-section" aria-labelledby="attendanceHistoryHeading">
+          <div class="dashboard-section-head"><h3 id="attendanceHistoryHeading">Attendance History</h3></div>
+          <div id="attendanceEmpty" class="empty-state hidden"><p>You have not attended any sessions yet.</p></div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead><tr><th>Date</th><th>Club</th><th>Session</th><th>Title</th><th>Credit</th><th>Status</th><th>Time Marked</th></tr></thead>
+              <tbody id="attendanceTableBody"></tbody>
+            </table>
+          </div>
+          <div id="attendanceMobileList" class="mobile-record-list"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+  <script src="assets/js/config.js?v=recovery-20260729"></script>
+  <script src="assets/js/utils.js?v=recovery-20260729"></script>
+  <script src="assets/js/api.js?v=recovery-20260729"></script>
+  <script src="assets/js/auth.js?v=ultra-fast-1"></script>
+  <script src="assets/js/navigation.js?v=guest-attendance-1"></script>
+  <script src="assets/js/member-data.js?v=ultra-fast-1"></script>
+  <script src="assets/js/attendance.js?v=ultra-fast-1"></script>
+</body>
+</html>

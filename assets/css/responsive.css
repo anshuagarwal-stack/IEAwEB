@@ -1,0 +1,150 @@
+/* =========================================================
+   IEA responsive rules
+   Includes mobile payment-modal fix
+   ========================================================= */
+
+@media (max-width: 430px) {
+  body {
+    font-size: 15px;
+  }
+
+  .card-pad,
+  .club-card,
+  .plan-card {
+    padding: 21px;
+  }
+
+  .login-card {
+    padding: 25px;
+  }
+
+  .modal {
+    padding: 22px;
+  }
+}
+
+/* =========================================================
+   MOBILE PAYMENT MODAL FIX
+   Keeps the QR, WhatsApp button and close button accessible.
+   ========================================================= */
+@media (max-width: 640px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .modal-backdrop {
+    /* The backdrop itself scrolls when the modal is taller than the phone. */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    padding:
+      max(10px, env(safe-area-inset-top))
+      10px
+      max(10px, env(safe-area-inset-bottom));
+  }
+
+  .modal {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 480px;
+    max-height: calc(100dvh - 20px);
+    margin: auto;
+    padding: 18px 16px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Reduce the tall payment QR screenshot so the action button is visible. */
+  .modal img,
+  .payment-modal img,
+  .payment-dialog img,
+  .payment-qr,
+  .payment-qr-image,
+  #paymentQr,
+  #paymentQrImage {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 44dvh;
+    margin-right: auto;
+    margin-left: auto;
+    object-fit: contain;
+  }
+
+  /* Keep modal action buttons visible at the bottom while scrolling. */
+  .modal-actions,
+  .payment-actions,
+  .payment-modal-actions {
+    position: sticky;
+    bottom: -1px;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 18px -16px -18px;
+    padding:
+      14px
+      16px
+      calc(14px + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--grey-700, #3a3a3a);
+    background: var(--charcoal, #111111);
+  }
+
+  .modal-actions .button,
+  .payment-actions .button,
+  .payment-modal-actions .button,
+  .modal a[href*="wa.me"],
+  .modal a[href*="whatsapp" i],
+  .modal [class*="whatsapp" i],
+  .modal [id*="whatsapp" i] {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 52px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Covers payment buttons that are not inside a modal-actions wrapper. */
+  .modal a[href*="wa.me"],
+  .modal a[href*="whatsapp" i],
+  .modal [class*="whatsapp" i],
+  .modal [id*="whatsapp" i] {
+    display: inline-flex !important;
+    align-items: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (max-height: 700px) and (max-width: 640px) {
+  .modal img,
+  .payment-modal img,
+  .payment-dialog img,
+  .payment-qr,
+  .payment-qr-image,
+  #paymentQr,
+  #paymentQrImage {
+    max-height: 36dvh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

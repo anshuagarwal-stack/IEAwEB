@@ -1,0 +1,34 @@
+IEA QUICK ATTENDANCE BUTTON - SETUP
+===================================
+
+WHAT WAS ADDED
+- A highlighted "Mark Attendance" button inside the mobile three-bar menu.
+- A new public page: mark-attendance.html
+- PIN-based quick attendance checking for Film, Reading and Awareness Clubs.
+- Only a club whose attendance is currently open becomes highlighted and clickable.
+- Existing member dashboard logins are not revoked by the quick attendance PIN check.
+
+FRONTEND FILES ADDED/CHANGED
+- mark-attendance.html (new)
+- assets/css/quick-attendance.css (new)
+- assets/js/quick-attendance.js (new)
+- assets/js/navigation.js (changed)
+- assets/css/global.css (changed)
+
+GOOGLE APPS SCRIPT FILES CHANGED
+- Code.gs
+- Attendance.gs
+
+INSTALLATION
+1. Replace Code.gs and Attendance.gs in Google Apps Script.
+2. Save, then Deploy > Manage deployments > Edit > New version > Deploy.
+3. Copy the website files into the existing GitHub repository.
+4. Do not upload apps-script-backend or database-backup to public GitHub.
+5. Commit and push the frontend files.
+6. Open the website on a phone, tap the three-bar menu, then tap Mark Attendance.
+
+TEST
+- Enter a valid 3-digit member PIN.
+- All three clubs remain visible.
+- Only the currently eligible club is highlighted and enabled.
+- Attendance is still controlled by India time, date, attendance window, active/published session, membership validity, credits, and duplicate attendance checks.

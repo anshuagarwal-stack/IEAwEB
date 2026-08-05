@@ -1,0 +1,61 @@
+IEA CLUBS – COMPLETE ADMIN PANEL INSTALLATION
+==============================================
+
+WHAT IS INCLUDED
+----------------
+1. Complete current GitHub Pages website.
+2. New admin-panel.html with dashboard and complete database controls.
+3. Member Login and Admin Login on the same login page.
+4. Apps Script backend files, including secure admin authentication, CRUD operations and AuditLog.
+5. A dated Excel backup of the connected Google Sheet containing the older data.
+
+ADMIN PANEL SECTIONS
+--------------------
+Dashboard, Members, Membership Enquiries, Club Sessions, Attendance,
+Film Club Attendance, Reading Club Attendance, Awareness Club Attendance,
+Membership Plans, Credit Transactions, Clubs, Settings, Admins,
+Admin Sessions, Member Sessions, Login Attempts, Audit Log and Members Backup.
+
+IMPORTANT SECURITY
+------------------
+- Do not upload the apps-script-backend folder to GitHub.
+- Do not upload the database-backup folder to a public GitHub repository.
+- Admin passwords are hashed in Google Sheets. Plain passwords are never stored there.
+- The Film/Reading/Awareness attendance tabs and system-history tabs are read-only in the panel.
+
+PART A – GOOGLE APPS SCRIPT
+---------------------------
+1. Open the Apps Script project connected to the Clubs Attendance System sheet.
+2. Replace the matching files with every .gs file inside apps-script-backend.
+3. Add AdminPanel.gs and AdminSetup.gs as new script files.
+4. Save all files.
+5. Select setupIEAAdminPanel and click Run once. Approve permission.
+6. Open AdminSetup.gs. Inside createInitialIEAAdministrator, edit ADMIN_NAME,
+   ADMIN_EMAIL and ADMIN_PASSWORD. Use a private password of at least 10 characters.
+7. Select createInitialIEAAdministrator and click Run once.
+8. Immediately replace the password text in AdminSetup.gs with:
+   CHANGE-THIS-TO-A-STRONG-PRIVATE-PASSWORD
+   and save again. The password is already securely hashed in the Admins sheet.
+9. Deploy → Manage deployments → Edit current deployment → New version → Deploy.
+10. Keep the existing /exec URL. Do not change assets/js/config.js.
+
+PART B – GITHUB
+---------------
+1. Work in the locally cloned GitHub repository.
+2. Copy all website files from this package into that repository and replace matching files.
+3. Do not copy apps-script-backend or database-backup into the public repository.
+4. Confirm CNAME contains only internationalenglishacademy.org.
+5. Commit: Add complete secure admin panel
+6. Push origin and wait for the newest Pages deployment.
+
+PART C – LOGIN
+--------------
+Open https://internationalenglishacademy.org/login.html
+Choose Admin Login, enter the administrator email and password, and open the panel.
+Direct admin URL: https://internationalenglishacademy.org/admin-panel.html
+
+DATABASE BACKUP
+---------------
+database-backup/Clubs-Attendance-System-Backup-2026-07-29.xlsx is a snapshot of
+all connected sheets and older records at the time this package was prepared.
+The live Google Sheet remains the database used by the website.

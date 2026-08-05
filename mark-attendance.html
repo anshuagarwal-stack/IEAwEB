@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Quick attendance marking for International English Academy India club members.">
+  <title>Mark Attendance | IEA Clubs</title>
+  <link rel="icon" href="assets/images/iea-logo.png">
+  <link rel="stylesheet" href="assets/css/variables.css?v=quick-attendance-1">
+  <link rel="stylesheet" href="assets/css/global.css?v=guest-attendance-1">
+  <link rel="stylesheet" href="assets/css/public.css?v=quick-attendance-1">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=quick-attendance-1">
+  <link rel="stylesheet" href="assets/css/quick-attendance.css?v=quick-attendance-1">
+</head>
+<body class="public-page quick-attendance-body" data-page="quick-attendance">
+  <a class="skip-link" href="#quickAttendanceMain">Skip to attendance</a>
+  <header id="siteHeader"></header>
+
+  <main id="quickAttendanceMain" class="quick-attendance-main">
+    <section class="quick-attendance-shell" aria-labelledby="quickAttendanceTitle">
+      <div class="quick-attendance-brand">
+        <img src="assets/images/iea-logo.png" alt="International English Academy India">
+      </div>
+
+      <div class="quick-attendance-heading">
+        <p class="eyebrow">IEA Clubs</p>
+        <h1 id="quickAttendanceTitle">Mark Your Attendance</h1>
+        <p>Enter your three-digit member PIN. The club button will become active only when today’s attendance window is open.</p>
+      </div>
+
+      <form id="quickAttendancePinForm" class="quick-pin-form" novalidate>
+        <label class="form-field" for="quickAttendancePin">
+          <span class="form-label">Member PIN</span>
+          <input
+            id="quickAttendancePin"
+            class="form-input quick-pin-input"
+            name="pin"
+            type="password"
+            inputmode="numeric"
+            pattern="[0-9]{3}"
+            maxlength="3"
+            autocomplete="one-time-code"
+            placeholder="Enter 3-digit PIN"
+            required>
+        </label>
+        <button id="quickAttendanceCheckButton" class="button quick-check-button" type="submit">Check Attendance</button>
+      </form>
+
+      <div id="quickAttendanceMessage" class="quick-attendance-message" aria-live="polite"></div>
+
+      <section aria-labelledby="quickClubsTitle">
+        <div class="quick-section-head">
+          <div>
+            <p class="eyebrow">Today’s availability</p>
+            <h2 id="quickClubsTitle">Choose your club</h2>
+          </div>
+          <button id="quickAttendanceReset" class="button button-secondary hidden" type="button">Use Another PIN</button>
+        </div>
+        <div id="quickAttendanceClubGrid" class="quick-club-grid">
+          <article class="quick-club-card" data-club-placeholder>
+            <span class="quick-club-icon" aria-hidden="true">🎬</span>
+            <h3>Film Club</h3>
+            <p>Enter your PIN to check today’s attendance.</p>
+            <button class="button button-block" type="button" disabled>Check with PIN</button>
+          </article>
+          <article class="quick-club-card" data-club-placeholder>
+            <span class="quick-club-icon" aria-hidden="true">📚</span>
+            <h3>Reading Club</h3>
+            <p>Enter your PIN to check today’s attendance.</p>
+            <button class="button button-block" type="button" disabled>Check with PIN</button>
+          </article>
+          <article class="quick-club-card" data-club-placeholder>
+            <span class="quick-club-icon" aria-hidden="true">🌍</span>
+            <h3>Awareness Club</h3>
+            <p>Enter your PIN to check today’s attendance.</p>
+            <button class="button button-block" type="button" disabled>Check with PIN</button>
+          </article>
+        </div>
+      </section>
+
+      <p class="quick-attendance-note">Attendance is controlled by the session date, published status, attendance opening and closing time, membership validity and available credits.</p>
+    </section>
+  </main>
+
+  <footer id="siteFooter"></footer>
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <script src="assets/js/config.js?v=quick-attendance-1"></script>
+  <script src="assets/js/utils.js?v=quick-attendance-1"></script>
+  <script src="assets/js/api.js?v=quick-attendance-1"></script>
+  <script src="assets/js/auth.js?v=quick-attendance-1"></script>
+  <script src="assets/js/navigation.js?v=guest-attendance-1"></script>
+  <script src="assets/js/quick-attendance.js?v=quick-attendance-1"></script>
+</body>
+</html>

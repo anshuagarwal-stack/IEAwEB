@@ -1,0 +1,222 @@
+.guest-attendance-body {
+  background:
+    radial-gradient(circle at 50% 0, rgba(245, 245, 242, 0.10), transparent 30rem),
+    var(--black);
+  color: var(--grey-100);
+}
+
+.guest-attendance-main {
+  min-height: calc(100vh - var(--header-height));
+  padding: 42px 16px 72px;
+}
+
+.guest-attendance-shell {
+  width: min(920px, 100%);
+  margin: 0 auto;
+  padding: 32px;
+  border: 1px solid var(--grey-700);
+  border-radius: 26px;
+  background: rgba(17, 17, 17, 0.98);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.48);
+}
+
+.guest-attendance-brand {
+  width: min(310px, 76vw);
+  margin: 0 auto 26px;
+  padding: 18px;
+  border: 1px solid var(--grey-800);
+  border-radius: 18px;
+  background: var(--black);
+}
+
+.guest-attendance-brand img {
+  width: 100%;
+  max-height: 145px;
+  object-fit: contain;
+}
+
+.guest-attendance-heading {
+  max-width: 700px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.guest-attendance-heading h1 {
+  margin-bottom: 12px;
+  font-size: clamp(2rem, 7vw, 3.7rem);
+}
+
+.guest-attendance-heading p,
+.guest-attendance-note,
+.guest-club-card p,
+.guest-selected-session p {
+  color: var(--grey-400);
+}
+
+.guest-attendance-message {
+  min-height: 0;
+  max-width: 700px;
+  margin: 0 auto 24px;
+}
+
+.guest-section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 34px 0 18px;
+}
+
+.guest-section-head h2 {
+  margin-bottom: 0;
+  font-size: clamp(1.65rem, 5vw, 2.5rem);
+}
+
+.guest-club-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.guest-club-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  padding: 22px;
+  border: 1px solid var(--grey-700);
+  border-radius: 18px;
+  background: var(--charcoal-2);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.guest-club-card h3 {
+  margin: 14px 0 10px;
+}
+
+.guest-club-card .button {
+  margin-top: auto;
+}
+
+.guest-club-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--grey-900);
+  font-size: 1.45rem;
+}
+
+.guest-club-card.is-open {
+  transform: translateY(-4px);
+  border: 2px solid var(--grey-100);
+  background: linear-gradient(180deg, rgba(245, 245, 242, 0.10), var(--charcoal-2));
+  box-shadow: 0 0 0 4px rgba(245, 245, 242, 0.06), 0 18px 45px rgba(0, 0, 0, 0.3);
+}
+
+.guest-club-card.is-open .guest-club-icon,
+.guest-club-card.is-selected .guest-club-icon {
+  background: var(--grey-100);
+  color: var(--black);
+}
+
+.guest-club-card.is-open .guest-select-button {
+  background: var(--grey-100);
+  color: var(--black);
+  border-color: var(--grey-100);
+}
+
+.guest-club-card.is-selected {
+  border-color: var(--success);
+  box-shadow: 0 0 0 4px rgba(134, 217, 147, 0.08);
+}
+
+.guest-session-preview {
+  display: grid;
+  gap: 4px;
+  margin: 0 0 18px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.22);
+  color: var(--grey-300);
+  font-size: 0.88rem;
+}
+
+.guest-form-section {
+  margin-top: 34px;
+  padding: 24px;
+  border: 1px solid var(--grey-700);
+  border-radius: 20px;
+  background: var(--charcoal-2);
+}
+
+.guest-form-section[hidden] {
+  display: none;
+}
+
+.guest-selected-session {
+  margin: 0 0 22px;
+  padding: 14px 16px;
+  border-left: 4px solid var(--success);
+  border-radius: 10px;
+  background: var(--success-bg);
+}
+
+.guest-selected-session strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--success);
+}
+
+.guest-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.guest-form-grid .full {
+  grid-column: 1 / -1;
+}
+
+.guest-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.guest-form-actions .button-primary {
+  background: var(--grey-100);
+  color: var(--black);
+  border-color: var(--grey-100);
+}
+
+.guest-honeypot {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+}
+
+.guest-attendance-note {
+  margin: 26px 0 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--grey-800);
+  text-align: center;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 760px) {
+  .guest-attendance-main { padding: 18px 10px 48px; }
+  .guest-attendance-shell { padding: 22px 14px; border-radius: 20px; }
+  .guest-club-grid { grid-template-columns: 1fr; }
+  .guest-club-card { min-height: 0; }
+  .guest-section-head { align-items: stretch; flex-direction: column; }
+  .guest-form-section { padding: 18px 14px; }
+  .guest-form-grid { grid-template-columns: 1fr; }
+  .guest-form-grid .full { grid-column: auto; }
+  .guest-form-actions { display: grid; grid-template-columns: 1fr; }
+  .guest-form-actions .button { width: 100%; }
+}
